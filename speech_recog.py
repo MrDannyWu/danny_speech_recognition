@@ -13,9 +13,10 @@
 
 import speech_recognition as sr
 r = sr.Recognizer()                                              #调用识别器
-test = sr.AudioFile(r"E:\Users\Danny\Desktop\t9hnz-qm5pv.wav")   #导入语音文件
+test = sr.AudioFile(".\\name.wav")   #导入语音文件
 with test as source:
     audio = r.record(source)
 type(audio)
-c=r.recognize_sphinx(audio, language='zh-cn')                    #识别输出
+# c=r.recognize_sphinx(audio, language='zh-cn')                    #识别输出
+c=r.recognize_sphinx(audio)                    #识别输出
 print(c)
